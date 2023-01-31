@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Insert PIN</title>
+</head>
+
+<body>
+
+    <div class="bg-blue-500 min-w-screen min-h-screen text-white flex justify-between items-center px-[100px]">
+        <div>
+            <img src="../img/pin.png" alt="Image">
+        </div>
+        <div class="text-center font-bold">
+            <p class="text-3xl">MASUKKAN PIN</p>
+            <form class="py-[150px]" id="pinForm">
+                <input type="number" class="outline-none font-medium py-[5px] px-[10px] text-black"
+                    placeholder="Masukkan pin anda" id="pin">
+                <button id="pinBtn" class="font-light">ENTER</button>
+            </form>
+            <p class="text-3xl">TEKAN 'ENTER' JIKA SELESAI <br> MEMASUKKAN PIN</p>
+        </div>
+    </div>
+
+    <script>
+        let pin = document.getElementById('pin');
+        let formPin = document.getElementById('pinForm');
+
+        formPin.addEventListener("submit", (event) => {
+            event.preventDefault()
+            pin.value === "123456" ? window.location.replace("./option.html") : alert("User not found")
+        })
+    </script>
+</body>
+
+</html>
